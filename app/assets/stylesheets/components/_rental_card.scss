@@ -1,8 +1,49 @@
 .rental_card {
-  color: $yellow;
+  background-color: $white;
   text-align: center;
   border-style: solid;
-  border-width: 1px;
+  border-width: 0.5px;
   padding: 13px 13px 13px 13px;
   border-radius: 7px;
+  margin: 1em 0;
+
+  .personnality-infos {
+    color: $medium-gray;
+  }
+
+  .base-line-name {
+    color: $medium-gray;
+    font-size: 15px;
+  }
+
+  .main-emotion-border {
+    border-top: 2px;
+    border-bottom: 2px;
+    border-top-color: $medium-gray;
+    border-bottom-color: $medium-gray;
+    border-bottom-style: solid;
+    border-top-style: solid;
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+  .date {
+    padding-top: 4px;
+    padding-bottom: 25px;
+    font-style: italic;
+  }
+  .padding-personnality-info li {
+    padding: 10px 10px;
+  }
+  .avatar-infos {
+    padding-top: 20px;
+  }
 }
+
+.wrapper {
+  background-color: $background-gray;
+  padding-top: 30px;
+}
+
+
+

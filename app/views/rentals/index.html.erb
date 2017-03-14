@@ -1,35 +1,43 @@
-<div class="container">
-  <div class="row">
-    <% @rentals.each do |rental| %>
-      <div class="col-xs-12 col-sm-3">
+<div class="wrapper">
+  <div class="container">
+    <div class="row">
+      <% @rentals.each do |rental| %>
+      <div class="col-xs-12 col-sm-4">
         <div class="card rental_card">
-          <div><!-- insert <div class="card"> -->
-            <%= cl_image_tag rental.user.photo, height: 50, width: 50, crop: :thumb, radius: :max %>
-            <h4 class="h4"><%= rental.user.name %></h4>
-            <p> propose you to feel</p>
+
+          <div class="avatar-infos">
+            <%= cl_image_tag rental.user.photo, height: 100, width: 100, crop: :thumb, radius: :max %>
+            <h4><%= rental.user.name %><br/><span class="base-line-name">propose you to live</span></h4>
           </div>
+
           <div>
-          <h4 class="h4"><%= rental.personnality.main_emotion %></h4>
+            <h2 class="main-emotion-border"><%= rental.personnality.main_emotion.upcase %></h2>
           </div>
-          <div>
-          <p  class="p">my age: </p>
-          <h4 class="h4"><%= rental.personnality.age %></h4>
+
+          <div class="date" >
+            from <%= l(rental.start_date, format: "%d %b %Y") %> to <%= l(rental.end_date, format: "%d %b %Y") %>
           </div>
-          <div>
-          <p  class="p">my job: </p>
-          <h4 class="h4"><%= rental.personnality.job %></h4>
+
+          <div class="padding-personnality-info">
+            <ul class="list-inline">
+
+              <li><p><span class="personnality-infos">Job</span><br/><%= rental.personnality.job %></p></li>
+
+              <li><p><span class="personnality-infos ">Age</span> <br/> <%= rental.personnality.age %></p></li>
+
+              <li><p><span class="personnality-infos">Friend</span> <br/><%= rental.personnality.friends %></p></li>
+            </ul>
           </div>
+
           <div>
-          <p  class="p"> my very best friend: </p>
-          <h4><%= rental.personnality.friends %></h4>
+            button
           </div>
         </div>
       </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
-
-
 
 
 
