@@ -2,11 +2,7 @@
  * CSS code specific to home page
  * (margin/padding adjustments)
  * ------------------------------------- */
-.form-control {
-    border: 0;
+.no-padding-lr {
+  padding-left: 0;
+  padding-right: 0;
 }
-
-div.search {
-    border: 1px solid;
-}
-
