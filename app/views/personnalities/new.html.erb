@@ -1,0 +1,23 @@
+
+
+
+
+
+<h1>Bonjour Host</h1>
+<h3>Etape 1</h3>
+
+<div class="form-group">
+  <%= simple_form_for @personnality do |f|%>
+    <%= f.input :name %>
+    <%= f.input :age  %>
+    <%= f.input :job %>
+    <%= f.input :friends %>
+    <%= f.input :main_emotion %>
+    <%= f.submit class="btn btn-info"%>
+</div>
+<% end %>
+
+<div>
+  <%= image_tag "logo.png", {class: "img-circle", id: "logo"}%>
+
+</div>
