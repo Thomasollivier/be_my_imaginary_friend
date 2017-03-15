@@ -1,9 +1,13 @@
 <div class="wrapper">
   <div class="container">
     <div class="row">
+      <h1> Current reservations </h1>
       <% @rentals.each do |rental| %>
       <div class="col-xs-12 col-sm-4">
-        <div class="card rental_card">
+        <% status = rand(2) + 1 == 1 ? "accepted" : "pending" %>
+
+
+        <div class="card rental_card rental_card-<%= status %>">
 
           <div class="avatar-infos">
             <%= cl_image_tag rental.user.photo, height: 100, width: 100, crop: :thumb, radius: :max %>
@@ -11,7 +15,7 @@
           </div>
 
           <div>
-            <h2 class="main-emotion-border"><%= rental.personnality.main_emotion.upcase %></h2>
+            <h2 class="main-emotion-border"><%= rental.personnality.main_emotion.upcase %>
           </div>
 
           <div class="date" >
@@ -30,7 +34,11 @@
           </div>
 
           <div>
-            button
+            <% if status == "accepted" %>
+            <i class="fa fa-check-circle-o size-icon color-accepted" aria-hidden="true"></i>
+            <% else %>
+            <i class="fa fa-ban size-icon color-pending" aria-hidden="true"></i>
+            <% end %>
           </div>
         </div>
       </div>

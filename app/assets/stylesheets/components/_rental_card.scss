@@ -1,11 +1,32 @@
+.wrapper {
+  background-color: $background-gray;
+  padding-top: 30px;
+}
+
 .rental_card {
+  box-shadow: 0px 0px 5px;
   background-color: $white;
   text-align: center;
-  border-style: solid;
-  border-width: 0.5px;
   padding: 13px 13px 13px 13px;
   border-radius: 7px;
-  margin: 1em 0;
+  margin: 3em 0;
+
+  &-accepted {
+    .main-emotion-border {
+      color: $green-accepted;
+    }
+  }
+
+  &-pending {
+    .main-emotion-border {
+      color: $medium-gray;
+    }
+  }
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 11px;
+  }
 
   .personnality-infos {
     color: $medium-gray;
@@ -17,8 +38,9 @@
   }
 
   .main-emotion-border {
-    border-top: 2px;
-    border-bottom: 2px;
+    font-size: 50px;
+    border-top: 1px;
+    border-bottom: 1px;
     border-top-color: $medium-gray;
     border-bottom-color: $medium-gray;
     border-bottom-style: solid;
@@ -40,10 +62,16 @@
   }
 }
 
-.wrapper {
-  background-color: $background-gray;
-  padding-top: 30px;
+.size-icon {
+  font-size: 75px;
 }
 
+.color-accepted {
+  color: $green-accepted;
 
+}
+
+.color-pending {
+  color: $medium-gray;
+}
 
