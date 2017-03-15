@@ -1,7 +1,5 @@
 .wrapper {
-  background-color: grey;
-  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
-  margin: 0;
+
 }
 
 .container {
@@ -9,14 +7,33 @@
   padding-bottom: 20px;
 }
 
+.form-group {
+  padding-left: 50px;
+}
+
+.photo {
+
+  padding-left:125px;
+  padding-top: 50px;
+}
+
+.btn-info {
+padding-left: 50px;
+}
+
+
 #logo {
- padding-left: 150px;
+ padding-left: 200px;
  padding-top: 95px;
 }
 
 #title {
   padding-left : 45px;
+  padding-bottom: 10px;
+  font-family: Open Sans;
+}
+#title2 {
+  padding-left : 45px;
   padding-bottom: 25px;
   font-family: Open Sans;
 }
-
