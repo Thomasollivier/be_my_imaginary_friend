@@ -1,1 +1,130 @@
-<h1>Pages#home</h1>
+<div class="navbar-wagon">
+  <!-- Logo -->
+  <a href="/" class="navbar-wagon-brand">
+    <img src="http://lorempixel.com/50/50/nature/" />
+  </a>
+
+  <!-- Right Navigation -->
+  <div class="navbar-wagon-right hidden-xs hidden-sm">
+
+    <!-- Search form -->
+    <form action="" class="navbar-wagon-search">
+      <input type="text" class="navbar-wagon-search-input" placeholder="Search something">
+      <button type="submit" class="navbar-wagon-search-btn">
+        <i class="fa fa-search"></i>
+      </button>
+    </form>
+
+    <!-- Text link -->
+    <a href="" class="navbar-wagon-item navbar-wagon-link">Contact</a>
+
+    <!-- Text link -->
+    <a href="" class="navbar-wagon-item navbar-wagon-link">Team</a>
+
+    <!-- Notification link-->
+    <a href="" class="navbar-wagon-item navbar-wagon-link">
+      <div class="badge-container">
+        <i class="fa fa-envelope-o"></i>
+        <div class="badge badge-blue">3</div>
+      </div>
+    </a>
+
+    <!-- Profile picture and dropdown -->
+    <div class="navbar-wagon-item">
+      <div class="dropdown">
+        <img src="http://placehold.it/50x50" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
+        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+          <li><a href="#">Profile</a></li>
+          <li><a href="/rentals">Dashboard</a></li>
+          <li><a href="#">Log Out</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Button (call-to-action) -->
+    <a href="" class="navbar-wagon-item navbar-wagon-button btn">Post stuff</a>
+  </div>
+
+  <!-- Dropdown appearing on mobile only -->
+  <div class="navbar-wagon-item hidden-md hidden-lg">
+    <div class="dropdown">
+      <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
+      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+        <li><a href="#">Some mobile link</a></li>
+        <li><a href="#">Other one</a></li>
+        <li><a href="#">Other one</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row text-center">
+    <h1 style="padding-bottom: 70px;"><span style="color: red;">Book</span> the personnalities you seek the most</h1>
+ </div>
+</div>
+
+<!-- <div class="container">
+  <div class="row">
+    <form method="get" action="/personnality" class=form-inline>
+            <input type="text" name="main_emotion" class="form-control inline-block" placeholder="Which main emotion">
+            <input type="date" name="date_start" class="form-control" placeholder="Start when">
+            <input type="date" name="date_end"  class="form-control" placeholder="End when">
+            <select name="sex" class="form-control" placeholder="sex">
+            <option value='male'>Male</option>
+            <option value="female">Female</option>
+            </select>
+            <input type="submit" value="Search"  class='btn-danger'>
+    </form>
+  </div>
+</div>
+ -->
+
+<div class="container">
+    <form method="get" action="/personnality" >
+    <div class="flex-origin">
+      <div class="flex-search">
+            <label for="main_emotion">Which?</label>
+            <input type="text" id="main_emotion" name="main_emotion" class="input-no-border" placeholder="Main emotion">
+      </div>
+      <div class="flex-search">
+            <label for="start_when">Start when?</label>
+            <input type="date" id="start_when" name="date_start" class="input-no-border"  placeholder="Start">
+      </div>
+      <div class="flex-search">
+          <label for="end_when">End when?</label>
+            <input type="date" id="end_when" name="date_end" class="input-no-border" placeholder="End when">
+      </div>
+      <div class="flex-search">
+            <label for="sex">Which gender?</label>
+            <select id="sex" name="sex" class="input-no-border" placeholder="sex">
+      </div>
+      <div class="flex-search">
+            <option value='male'>Male</option>
+            <option value="female">Female</option>
+            </select>
+      </div>
+      <div class="flex-search">
+            <input type="submit" value="Search"  class="flex-btn btn-danger">
+      </div>
+    </form>
+    </div>
+
+
+<br><br><br><br>
+<p style="color: darkgrey;"> Here's the FOUR most popular personnalities </p>
+<div class="container">
+
+  <div class="row">
+    <% @perso.each do |p| %>
+    <div class="col-xs-12 col-sm-3" style="padding-left: 0px;" >
+      <div class="card" style="background-image: linear-gradient(rgba(200,200,200,0.3), rgba(0,0,0,0.2)), url('http://lorempixel.com/200/200/city/');">
+        <div class="card-category"><%= p.main_emotion.upcase %></div>
+        <div class="card-description"><%= p.name %></div>
+        <img class="card-user avatar" src="<%= p.photo %>">
+        <a class="card-link" href="#" ></a>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>

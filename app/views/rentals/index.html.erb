@@ -1,0 +1,51 @@
+<div class="wrapper">
+  <div class="container">
+    <div class="row">
+      <h1> Current reservations </h1>
+      <% @rentals.each do |rental| %>
+      <div class="col-xs-12 col-sm-4">
+        <% status = rand(2) + 1 == 1 ? "accepted" : "pending" %>
+
+
+        <div class="rental_card rental_card-<%= status %>">
+
+          <div class="avatar-infos">
+            <%= cl_image_tag rental.user.photo, height: 100, width: 100, crop: :thumb, radius: :max %>
+            <h4><%= rental.user.name %><br/><span class="base-line-name">propose you to live</span></h4>
+          </div>
+
+          <div>
+            <h2 class="main-emotion-border"><%= rental.personnality.main_emotion.upcase %>
+          </div>
+
+          <div class="date" >
+            from <%= l(rental.start_date, format: "%d %b %Y") %> to <%= l(rental.end_date, format: "%d %b %Y") %>
+          </div>
+
+          <div class="padding-personnality-info">
+            <ul class="list-inline">
+
+              <li><p><span class="personnality-infos">Job</span><br/><%= rental.personnality.job %></p></li>
+
+              <li><p><span class="personnality-infos ">Age</span> <br/> <%= rental.personnality.age %></p></li>
+
+              <li><p><span class="personnality-infos">Friend</span> <br/><%= rental.personnality.friends %></p></li>
+            </ul>
+          </div>
+
+          <div>
+            <% if status == "accepted" %>
+            <i class="fa fa-check-circle-o size-icon color-accepted" aria-hidden="true"></i>
+            <% else %>
+            <i class="fa fa-ban size-icon color-pending" aria-hidden="true"></i>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+
