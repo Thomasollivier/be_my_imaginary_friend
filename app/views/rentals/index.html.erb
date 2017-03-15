@@ -7,7 +7,7 @@
         <% status = rand(2) + 1 == 1 ? "accepted" : "pending" %>
 
 
-        <div class="card rental_card rental_card-<%= status %>">
+        <div class="rental_card rental_card-<%= status %>">
 
           <div class="avatar-infos">
             <%= cl_image_tag rental.user.photo, height: 100, width: 100, crop: :thumb, radius: :max %>
