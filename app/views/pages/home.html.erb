@@ -54,11 +54,11 @@
 
 <br><br><br><br>
 <div class="container">
-<p style="color: darkgrey;"> Here's the FOUR most popular personnalities </p>
+<p style="color: #303030;"> Here's the FOUR most popular personnalities </p>
   <div class="row">
     <% @perso.each do |p| %>
-    <div class="col-xs-12 col-sm-3" style="padding-left: 0px;" >
-      <div class="card" style="background-image: linear-gradient(rgba(200,200,200,0.3), rgba(0,0,0,0.2)), url('http://lorempixel.com/200/200/city/');">
+    <div class="col-xs-12 col-sm-3" >
+      <div class="card" style="background-image: linear-gradient(rgba(200,200,200,0.3), rgba(0,0,0,0.2)), url('http://lorempixel.com/150/150/city/');">
         <div class="card-category"><%= p.main_emotion.upcase %></div>
         <div class="card-description"><%= p.name %></div>
         <img class="card-user avatar" src="<%= p.photo %>">
