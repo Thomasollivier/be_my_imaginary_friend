@@ -1,0 +1,37 @@
+<div>
+<h2 id=title>Bonjour ! Nous allons vous aidez à héberger</h2>
+<h3 id=title2><br>Etape 1</br> Quel type de personnalité avez-vous ? </h3>
+</div>
+<div class="wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-3">
+        <div class="form-group">
+          <%= simple_form_for @personnality do |f|%>
+            <%= f.input :name, :placeholder => "John Robert" %>
+            <%= f.input :age, :placeholder => "33" %>
+            <%= f.input :job, :placeholder => "Dentist" %>
+            <%= f.input :friends, :placeholder => "John Smith" %>
+            <%= f.input :main_emotion, :placeholder => "fear" %>
+             <div class="submit">
+            <%= f.submit "Create", class: "btn btn-danger" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+      <div class="col-sm-6">
+         <div class="photo_new"> <%= cl_image_tag("imagepagenew_fdtgjb.jpg",
+      width: 400, height: 300, crop: :fill) %>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+

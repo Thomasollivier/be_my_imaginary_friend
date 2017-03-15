@@ -9,6 +9,10 @@
 @import "font-awesome";
 
 // Your CSS
+@import "layout/*";
+@import "components/*";
+@import "pages/*";
+@import "vendor/*";
 @import "vendor/index";
 @import "layout/index";
 @import "components/index";
