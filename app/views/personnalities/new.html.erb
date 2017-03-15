@@ -1,11 +1,12 @@
 <div>
-<h2 id=title>Bonjour ! Nous allons vous aidez à héberger</h2>
-<h3 id=title2><br>Etape 1</br> Quel type de personnalité avez-vous ? </h3>
+<h2 id=title>Hello ! We helping to share a part of you</h2>
+<!-- <h3 id=title2><br>Etape 1</br> Quel type de personnalité avez-vous ? </h3> -->
 </div>
 <div class="wrapper">
   <div class="container">
     <div class="row">
       <div class="col-sm-3">
+      <h3 class="padding-step"><span class="color-step">Step 1</span><br/> Which personnality you want to share ? </h3>
         <div class="form-group">
           <%= simple_form_for @personnality do |f|%>
             <%= f.input :name, :placeholder => "John Robert" %>
