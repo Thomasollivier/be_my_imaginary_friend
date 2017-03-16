@@ -3,44 +3,55 @@
     <div class="row">
 
       <div class="show-card col-xs-12 col-sm-6">
-
-        <div class="proprio-infos">
-          <div class="head-proprio">
-            <%= cl_image_tag @personnality.user.photo, height: 85, width: 85, crop: :thumb, radius: :max %> <h3><%= @personnality.user.name %></h3>
+        <div class="perso">
+          <div class="head-perso">
+            <%= cl_image_tag @personnality.photo, height: 85, width: 85, crop: :thumb, radius: :max %> <h3><%= @personnality.name %></h3>
           </div>
-          <div class="sexe-age-metier">
+
+          <div class="personnality-infos">
+            <h2 class="main-emotion-border"><%= @personnality.main_emotion.upcase %>
+          </div>
+
+          <div class="SEXE-AGE-METIRE-PERSO">
             <ul class="list-inline">
+              <li><p><span class="personnality-infos">Sexe</span> <br/> <%= @personnality.sex %></p></li>
               <li><p><span class="personnality-infos">Age</span> <br/> <%= @personnality.user.age %></p></li>
-            </ul>
+              <li><p><span class="personnality-infos">Job</span> <br/> <%= @personnality.job %></p></li>
+
+              </ul>
           </div>
+
           <div class="description">
-            <p><span class="personnality-infos">Description</span><br/>Je suis quelqu'un de très perturbé ce qui rend mes personnalitées extrèmes et incroyable à vivre. Vous ne sortirez pas indemne de cette experience, croyez moi.</p>
+            <p><span class="personnality-infos">Decription</span> <br/> <%= @personnality.description %></p>
           </div>
         </div>
 
-        <div class="transition">
-          VOUS PROPOSE DE VIVRE
-        </div>
-
-        <div class="personnality-infos">
-          <h2 class="main-emotion-border"><%= @personnality.main_emotion.upcase %>
-        </div>
-        <div class="date-reservations">
-
-        </div>
-        <div class="SEXE-AGE-METIRE-PERSO">
-          <ul class="list-inline">
-            <li><p><span class="personnality-infos">Sexe</span> <br/> <%= @personnality.sex %></p></li>
-            <li><p><span class="personnality-infos">Age</span> <br/> <%= @personnality.user.age %></p></li>
-            <li><p><span class="personnality-infos">Job</span> <br/> <%= @personnality.job %></p></li>
-
+        <div class="proprio">
+          <div>
+            <ul class="list-inline">
+              <li><%= cl_image_tag @personnality.user.photo, height: 50, width: 50, crop: :thumb, radius: :max %></li>
+              <li><p><%= @personnality.user.name %></p></li>
             </ul>
+          </div>
+
+          <div class="description">
+                  <p><span class="personnality-infos">Description</span><br/>Je suis quelqu'un de très perturbé ce qui rend mes personnalitées extrèmes et incroyable à vivre. Vous ne sortirez pas indemne de cette experience, croyez moi.</p>
+          </div>
+          <div >
+            <ul class="list-inline">
+              <li><p><span class="personnality-infos">Email: </span><%= @personnality.user.email %></p></li>
+            </ul>
+          </div>
         </div>
-        <div class="description">
-          <p><span class="personnality-infos">Decription</span> <br/> <%= @personnality.description %></p>
-        </div>
+      </div>
+
+
+
+      <div class="booking-card col-xs-12 col-sm-6">
 
       </div>
+
+
 
     </div>
   </div>
