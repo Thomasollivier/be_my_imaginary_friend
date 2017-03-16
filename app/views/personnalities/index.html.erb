@@ -1,0 +1,45 @@
+<% @perso.each do |p| %>
+<%= link_to personnality_path(p), class: "none-decoration" do %>
+        <div class="col-xs-12 col-sm-4" >
+          <div class="rental_card rental_card-accepted">
+            <div class="avatar-infos">
+              <%= cl_image_tag p.photo, height: 100, width: 100, crop: :thumb, radius: :max %>
+              <h4>
+                <span style="color: black;"><%= p.name %></span>
+                <br/>
+                <span class="base-line-name">propose you to live</span>
+              </h4>
+            </div>
+            <div class=main-emotion-home>
+              <%= p.main_emotion.upcase %>
+            </div>
+            <div class="padding-personnality-info">
+              <ul class="list-inline">
+                <li>
+                  <p>
+                    <span class="personnality-infos">Job</span>
+                    <br/>
+                    <span style="color: black;"><%= p.job %></span>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <span class="personnality-infos ">Age</span>
+                    <br/>
+                    <span style="color: black;"><%= p.age %></span>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <span class="personnality-infos">Friend</span>
+                    <br/>
+                    <span style="color: black;"><%= p.friends %></span>
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      <% end %>
+<% end %>
+<h3 class="text-center"><%= @error %></h3>

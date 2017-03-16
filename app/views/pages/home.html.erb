@@ -4,24 +4,9 @@
  </div>
 </div>
 
-<!-- <div class="container">
-  <div class="row">
-    <form method="get" action="/personnality" class=form-inline>
-            <input type="text" name="main_emotion" class="form-control inline-block" placeholder="Which main emotion">
-            <input type="date" name="date_start" class="form-control" placeholder="Start when">
-            <input type="date" name="date_end"  class="form-control" placeholder="End when">
-            <select name="sex" class="form-control" placeholder="sex">
-            <option value='male'>Male</option>
-            <option value="female">Female</option>
-            </select>
-            <input type="submit" value="Search"  class='btn-danger'>
-    </form>
-  </div>
-</div>
- -->
 
 <div class="container">
-    <form method="get" action="/personnality" >
+    <form method="get" action="/personnalities" >
     <div class="flex-origin">
       <div class="flex-search">
             <label for="main_emotion">Which?</label>
@@ -51,20 +36,56 @@
     </form>
 </div>
 
-
+ <% if flash[:alert] %>
+    <h3 class="notice text-center" style="color: lightgrey"><%= flash[:alert] %></h3>
+  <% end %>
 <br><br><br><br>
 <div class="container">
-<p style="color: #303030;"> Here's the FOUR most popular personnalities </p>
+<h4 style="color: #303030;"> Here's the THREE most popular personnalities </h4>
   <div class="row">
     <% @perso.each do |p| %>
-    <div class="col-xs-12 col-sm-3" >
-      <div class="card" style="background-image: linear-gradient(rgba(200,200,200,0.3), rgba(0,0,0,0.2)), url('http://lorempixel.com/150/150/city/');">
-        <div class="card-category"><%= p.main_emotion.upcase %></div>
-        <div class="card-description"><%= p.name %></div>
-        <img class="card-user avatar" src="<%= p.photo %>">
-        <a class="card-link" href="#" ></a>
-      </div>
-    </div>
+      <%= link_to personnality_path(p), class: "none-decoration" do %>
+        <div class="col-xs-12 col-sm-4" >
+          <div class="rental_card rental_card-accepted">
+            <div class="avatar-infos">
+              <%= cl_image_tag p.photo, height: 100, width: 100, crop: :thumb, radius: :max %>
+              <h4>
+                <span style="color: black;"><%= p.name %></span>
+                <br/>
+                <span class="base-line-name">propose you to live</span>
+              </h4>
+            </div>
+            <div class=main-emotion-home>
+              <%= p.main_emotion.upcase %>
+            </div>
+            <div class="padding-personnality-info">
+              <ul class="list-inline">
+                <li>
+                  <p>
+                    <span class="personnality-infos">Job</span>
+                    <br/>
+                    <span style="color: black;"><%= p.job %></span>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <span class="personnality-infos ">Age</span>
+                    <br/>
+                    <span style="color: black;"><%= p.age %></span>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <span class="personnality-infos">Friend</span>
+                    <br/>
+                    <span style="color: black;"><%= p.friends %></span>
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      <% end %>
     <% end %>
   </div>
 </div>
