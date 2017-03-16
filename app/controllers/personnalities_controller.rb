@@ -6,6 +6,8 @@ class PersonnalitiesController < ApplicationController
 
   def create
     @personnality = Personnality.new(personnality_params)
+    @personnality.user = current_user
+
     @personnality.save!
     redirect_to personnality_path(@personnality)
   end
@@ -14,6 +16,6 @@ class PersonnalitiesController < ApplicationController
   private
 
   def personnality_params
-    params.require(:personnality).permit(:name, :age, :job, :friends, :main_emotion)
+    params.require(:personnality).permit(:name, :age, :sex, :job, :description, :main_emotion)
   end
 end
