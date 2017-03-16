@@ -6,7 +6,7 @@
 
 
 <div class="container">
-    <form method="get" action="/personnality" >
+    <form method="get" action="/personnalities" >
     <div class="flex-origin">
       <div class="flex-search">
             <label for="main_emotion">Which?</label>
@@ -36,7 +36,9 @@
     </form>
 </div>
 
-
+ <% if flash[:alert] %>
+    <h3 class="notice text-center" style="color: lightgrey"><%= flash[:alert] %></h3>
+  <% end %>
 <br><br><br><br>
 <div class="container">
 <h4 style="color: #303030;"> Here's the THREE most popular personnalities </h4>
