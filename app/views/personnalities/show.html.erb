@@ -1,37 +1,65 @@
 <div class="wrapper">
   <div class="container">
     <div class="row">
-      <div class="show-card col-xs-12 col-sm-6">
 
-        <div class="proprio-infos">
-          <div class="head-proprio">
-            PHOTO DE PROF PROPRIO + NOM
+      <div class="col-xs-12 col-sm-6">
+        <div class="show-card">
+        <div class="perso">
+          <div class="head-perso">
+            <%= cl_image_tag @personnality.photo, height: 85, width: 85, crop: :thumb, radius: :max %> <h3><%= @personnality.name %></h3>
           </div>
-          <div class="date-reservations">
-            START DATE + END DATE
+
+          <div class="personnality-infos">
+            <h2 class="main-emotion-border"><%= @personnality.main_emotion.upcase %>
           </div>
-          <div class="sexe-age-metier">
-            SEXE AGE METIER
+
+          <div>
+            <ul class="list-inline">
+              <li><p><span class="personnality-infos">Sexe</span> <br/> <%= @personnality.sex %></p></li>
+              <li><p><span class="personnality-infos">Age</span> <br/> <%= @personnality.user.age %></p></li>
+              <li><p><span class="personnality-infos">Job</span> <br/> <%= @personnality.job %></p></li>
+
+              </ul>
           </div>
+
           <div class="description">
-            DESCRIPTION DU PROPRIO
+            <span class="personnality-infos">Description</span>
+            <p><%= @personnality.description %></p>
           </div>
         </div>
 
-        <div class="transition">
-          VOUS PROPOSE DE VIVRE
-        </div>
+        <div class="proprio">
+          <div>
+            <ul class="list-inline">
+              <li><%= cl_image_tag @personnality.user.photo, height: 50, width: 50, crop: :thumb, radius: :max %></li>
+              <li><p><%= @personnality.user.name %></p></li>
+            </ul>
+          </div>
 
-        <div class="personnality-infos">
-          NOM DE LA PERSONNALITE
+          <div class="description">
+                  <p><span class="personnality-infos">Description</span><br/>Je suis quelqu'un de très perturbé ce qui rend mes personnalitées extrèmes et incroyable à vivre. Vous ne sortirez pas indemne de cette experience, croyez moi.</p>
+          </div>
+          <div >
+            <ul class="list-inline">
+              <li><p><span class="personnality-infos">Email: </span><%= @personnality.user.email %></p></li>
+            </ul>
+          </div>
         </div>
-        <div class="SEXE-AGE-METIRE-PERSO">
-          SEXE AGE METIER DE LA PERSO
-        </div>
-        <div class="description">
-          DESCRIPTION DE LA PERSO
-        </div>
+      </div>
+    </div>
 
+
+      <div class="col-xs-12 col-sm-3">
+        <div class="booking-card">
+          <h4>Booking your personnality</h4>
+            <div class="padding-date">
+              <%= simple_form_for [@personnality, @rental] do |f| %>
+                <%= f.input :start_date, as: :date, html5: true %>
+                <%= f.input :end_date, as: :date, html5: true %>
+                <%= f.submit "Book", class: "btn btn-danger" %>
+              <% end %>
+           </div>
+        </div>
       </div>
     </div>
   </div>

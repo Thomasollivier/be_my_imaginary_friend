@@ -1,4 +1,12 @@
 class PersonnalitiesController < ApplicationController
+  def show
+    @personnality = Personnality.find(params[:id])
+    @rental = Rental.new
+
+  end
+
+
+
   def new
     @personnality = Personnality.new
   end
