@@ -3,6 +3,6 @@ class PagesController < ApplicationController
 
   def home
     all_perso = Personnality.all
-    @perso = all_perso.first(4)
+    @perso = all_perso.first(3)
   end
 end
