@@ -12,7 +12,17 @@ class PersonnalitiesController < ApplicationController
     redirect_to personnality_path(@personnality)
   end
 
-
+  def index
+    if params[:main_emotion] == ""
+      @perso = Personnality.where(sex: params[:sex].downcase)
+    else
+      @perso = Personnality.where(sex: params[:sex].downcase, main_emotion: params[:main_emotion].downcase)
+    end
+    if @perso == []
+      flash[:alert] = "We dont have any result using the param you entered"
+      redirect_to root_path
+    end
+  end
   private
 
   def personnality_params
