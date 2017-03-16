@@ -1,7 +1,7 @@
 class PersonnalitiesController < ApplicationController
   def show
     @personnality = Personnality.find(params[:id])
-
+    @rental = Rental.new
 
   end
 
