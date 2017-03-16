@@ -18,8 +18,10 @@ end
   main_emotion = %w(fear anger sadness depression joy disgust trust anticipation pity envy love shame kindness suffering weeping lust gluttony greed sloth wrath pride).sample
   user = User.all.sample
   name = Faker::Name.name
-  age = [18..45].to_a.sample
-  Personnality.create!(name: name, age: age, job: job, friends: friends, main_emotion: main_emotion, user: user, remote_photo_url: 'http://lorempixel.com/200/200/people/')
+  age = (18..45).to_a.sample
+  sex = ["male","female"].sample
+  description = Faker::ChuckNorris.fact
+  Personnality.create!(name: name, age: age, job: job, friends: friends, main_emotion: main_emotion, user: user, remote_photo_url: 'http://lorempixel.com/200/200/people/', sex: sex, description: description)
 end
 
 # rental

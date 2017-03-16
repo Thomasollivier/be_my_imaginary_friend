@@ -1,7 +1,4 @@
-/* -------------------------------------
- * CSS code specific to home page
- * (margin/padding adjustments)
- * ------------------------------------- */
+/* Flexbox search */
 .no-padding-lr {
   padding-left: 0;
   padding-right: 0;
@@ -31,18 +28,10 @@
 
 .flex-btn {
   align-self: center;
-  // flex: 0 0 20%;
-  // border-right: 1px solid lightgrey;
-  // border-left: 1px solid lightgrey;
-  // border-top: 1px solid lightgrey;
-  // border-bottom: 1px solid lightgrey;
   padding-left: 20px;
   padding-right: 20px;
   padding-top:  10px;
   padding-bottom: 10px;
-  // align-self: stretch;
-  // text-align: center;
-
 }
 
 .input-no-border {
@@ -54,4 +43,29 @@
   padding-bottom: 10px;
   padding-left: 40px;
   padding-right: 40px;
+}
+
+
+
+/* Card */
+.none-decoration {
+  text-decoration: none;
+  color: #000000;
+
+}
+
+.none-decoration:hover {
+  text-decoration: none;
+  color: #000000;
+}
+
+.main-emotion-home {
+  color: lightgreen;
+  font-size: 50px;
+  border-top: 1px;
+  border-bottom: 1px;
+  border-top-color: $medium-gray;
+  border-bottom-color: $medium-gray;
+  border-bottom-style: solid;
+  border-top-style: solid;
 }
