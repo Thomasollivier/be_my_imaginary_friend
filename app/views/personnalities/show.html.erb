@@ -1,20 +1,20 @@
 <div class="wrapper">
   <div class="container">
     <div class="row">
+
       <div class="show-card col-xs-12 col-sm-6">
 
         <div class="proprio-infos">
           <div class="head-proprio">
-            PHOTO DE PROF PROPRIO + NOM
-          </div>
-          <div class="date-reservations">
-            START DATE + END DATE
+            <%= cl_image_tag @personnality.user.photo, height: 85, width: 85, crop: :thumb, radius: :max %> <h3><%= @personnality.user.name %></h3>
           </div>
           <div class="sexe-age-metier">
-            SEXE AGE METIER
+            <ul class="list-inline">
+              <li><p><span class="personnality-infos">Age</span> <br/> <%= @personnality.user.age %></p></li>
+            </ul>
           </div>
           <div class="description">
-            DESCRIPTION DU PROPRIO
+            <p><span class="personnality-infos">Description</span><br/>Je suis quelqu'un de très perturbé ce qui rend mes personnalitées extrèmes et incroyable à vivre. Vous ne sortirez pas indemne de cette experience, croyez moi.</p>
           </div>
         </div>
 
@@ -23,16 +23,25 @@
         </div>
 
         <div class="personnality-infos">
-          NOM DE LA PERSONNALITE
+          <h2 class="main-emotion-border"><%= @personnality.main_emotion.upcase %>
+        </div>
+        <div class="date-reservations">
+
         </div>
         <div class="SEXE-AGE-METIRE-PERSO">
-          SEXE AGE METIER DE LA PERSO
+          <ul class="list-inline">
+            <li><p><span class="personnality-infos">Sexe</span> <br/> <%= @personnality.sex %></p></li>
+            <li><p><span class="personnality-infos">Age</span> <br/> <%= @personnality.user.age %></p></li>
+            <li><p><span class="personnality-infos">Job</span> <br/> <%= @personnality.job %></p></li>
+
+            </ul>
         </div>
         <div class="description">
-          DESCRIPTION DE LA PERSO
+          <p><span class="personnality-infos">Decription</span> <br/> <%= @personnality.description %></p>
         </div>
 
       </div>
+
     </div>
   </div>
 </div>
