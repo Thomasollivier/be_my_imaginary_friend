@@ -3,7 +3,14 @@ Personnality.destroy_all
 User.destroy_all
 
 # user
-10.times do
+1.times do
+  name = "admin"
+  age = (18..45).to_a.sample
+  email = "admin@root.fr"
+  password = 123456
+  User.create!(name: name, age: age, email: email, password: password, remote_photo_url: 'http://lorempixel.com/200/200/people/')
+end
+9.times do
   name = Faker::Name.name
   age = (18..45).to_a.sample
   email = Faker::Internet.email
