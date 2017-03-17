@@ -4,7 +4,7 @@ class ReservationsController < ApplicationController
   end
 
   def accept
-    @reservation = Reservation.find(params[:id])
+    @reservation = Rental.find(params[:id])
     @reservation.status = "accepted"
     @reservation.save!
     redirect_to reservations_path
@@ -12,7 +12,7 @@ class ReservationsController < ApplicationController
   end
 
   def refuse
-    @reservation = Reservation.find(params[:id])
+    @reservation = Rental.find(params[:id])
     @reservation.status = "refuse"
     @reservation.save!
     redirect_to reservations_path
