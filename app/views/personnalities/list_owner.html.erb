@@ -1,0 +1,57 @@
+
+
+<div class="wrapper">
+  <div class="container">
+    <div class="row">
+<% @perso_array.each do |perso| %>
+      <div class="col-xs-12 col-sm-6">
+        <div class="show-card">
+        <div class="perso">
+          <div class="head-perso">
+            <%= cl_image_tag perso.photo, height: 85, width: 85, crop: :thumb, radius: :max %> <h3><%= perso.name %></h3>
+          </div>
+
+          <div class="personnality-infos">
+            <h2 class="main-emotion-border"><%= perso.main_emotion.upcase %>
+          </div>
+
+          <div>
+            <ul class="list-inline">
+              <li><p><span class="personnality-infos">Sexe</span> <br/> <%= perso.sex %></p></li>
+              <li><p><span class="personnality-infos">Age</span> <br/> <%= perso.user.age %></p></li>
+              <li><p><span class="personnality-infos">Job</span> <br/> <%= perso.job %></p></li>
+
+              </ul>
+          </div>
+
+          <div class="description">
+            <span class="personnality-infos">Description</span>
+            <p><%= perso.description %></p>
+          </div>
+        </div>
+
+        <div class="proprio">
+          <div>
+            <ul class="list-inline">
+              <li><%= cl_image_tag perso.user.photo, height: 50, width: 50, crop: :thumb, radius: :max %></li>
+              <li><p><%= perso.user.name %></p></li>
+            </ul>
+          </div>
+
+          <div class="description">
+                  <p><span class="personnality-infos">Description</span><br/>Je suis quelqu'un de très perturbé ce qui rend mes personnalitées extrèmes et incroyable à vivre. Vous ne sortirez pas indemne de cette experience, croyez moi.</p>
+          </div>
+          <div >
+            <ul class="list-inline">
+              <li><p><span class="personnality-infos">Email: </span><%= perso.user.email %></p></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+<% end %>
+    </div>
+  </div>
+</div>

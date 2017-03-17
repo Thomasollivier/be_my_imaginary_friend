@@ -13,4 +13,5 @@ Rails.application.routes.draw do
     end
   end
   resources :rentals, only: [:index]
+  get 'list_owner', to: 'personnalities#list_owner'
 end
