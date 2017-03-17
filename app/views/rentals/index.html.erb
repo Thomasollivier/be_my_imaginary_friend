@@ -4,7 +4,7 @@
       <h1> Current reservations </h1>
       <% @rentals.each do |rental| %>
       <div class="col-xs-12 col-sm-4">
-        <% status = rand(2) + 1 == 1 ? "accepted" : "pending" %>
+        <% status = rental.status %>
 
 
         <div class="rental_card rental_card-<%= status %>">

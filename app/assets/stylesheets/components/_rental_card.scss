@@ -69,10 +69,20 @@
 
 .color-accepted {
   color: $green-accepted;
-
+  &:hover {
+    color: $light-green;
+  }
 }
 
 .color-pending {
   color: $medium-gray;
 }
 
+.color-denied {
+  color: $red;
+  &:hover {
+    color: $light-red;
+
+  }
+
+}
