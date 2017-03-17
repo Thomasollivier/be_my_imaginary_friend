@@ -1,0 +1,64 @@
+
+
+
+
+<div class="wrapper-rentals">
+  <div class="container">
+    <div class="row">
+      <h1> Here, your personnalities booked. Accept or decline. </h1>
+      <% @reservations.each do |reservation| %>
+      <div class="col-xs-12 col-sm-4">
+        <% status = reservation.status %>
+
+
+        <div class="rental_card rental_card-<%= status %>">
+
+          <div class="avatar-infos">
+            <%= cl_image_tag reservation.user.photo, height: 100, width: 100, crop: :thumb, radius: :max %>
+            <h4><%= reservation.user.name %><br/><span class="base-line-name">want to live</span></h4>
+          </div>
+
+          <div>
+            <h2 class="main-emotion-border"><%= reservation.personnality.main_emotion.upcase %>
+          </div>
+
+          <div class="date" >
+            from <%= l(reservation.start_date, format: "%d %b %Y") %> to <%= l(reservation.end_date, format: "%d %b %Y") %>
+          </div>
+
+          <div class="padding-personnality-info">
+            <ul class="list-inline">
+
+              <li><p><span class="personnality-infos">Job</span><br/><%= reservation.personnality.job %></p></li>
+
+              <li><p><span class="personnality-infos ">Age</span> <br/> <%= reservation.personnality.age %></p></li>
+
+              <li><p><span class="personnality-infos">Friend</span> <br/><%= reservation.personnality.friends %></p></li>
+            </ul>
+          </div>
+
+          <div>
+
+            <% if status == "accepted" %>
+            <i class="fa fa-check-circle-o size-icon color-accepted" aria-hidden="true"></i>
+            <p>Vous avez accepté cette réservation</p>
+            <% elsif status == "refuse" %>
+              <p>vous avez refusé cette réservation</p>
+            <% else %>
+            <%= link_to accept_reservation_path(reservation), class: "none-decoration" do %>
+            <i class="fa fa-check-circle-o size-icon color-accepted" aria-hidden="true"></i>
+            <% end %>
+            <%= link_to refuse_reservation_path(reservation), class: "none-decoration" do %>
+            <i  class="fa fa-times-circle-o size-icon color-denied" aria-hidden="true"></i>
+            <% end %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+

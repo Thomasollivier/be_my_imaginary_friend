@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   resources :personnalities, only: [:new, :create, :show, :index] do
     resources :rentals, only: [:create]
   end
-  resources :reservations, only: [:show] do
+
+  resources :reservations, only: [:index] do
     member do
       patch :accept
       patch :refuse
