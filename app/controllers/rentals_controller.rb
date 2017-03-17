@@ -16,7 +16,7 @@ class RentalsController < ApplicationController
     @rental.personnality = Personnality.find(params[:personnality_id])
 
     @rental.save!
-    redirect_to root_path
+    redirect_to rentals_path
   end
 
   private
