@@ -14,9 +14,11 @@
             <%= f.input :age, :placeholder => "33" %>
             <%= f.input :sex, :placeholder => "male" %>
             <%= f.input :job, :placeholder => "Dentist" %>
-            <%= f.input :friends, :placeholder => "Bob, Bobby, Babette" %>
+             <%= f.input :friends, :placeholder => "Bob, Bobby, Babette" %>
             <%= f.input :description, :placeholder => "very nice guy who likes to clean your theeths" %>
             <%= f.input :main_emotion, :placeholder => "fear" %>
+            <%= f.input :photo, :placeholder => "download a photo" %>
+            <%= f.input :photo_cache, as: :hidden %>
              <div class="submit">
             <%= f.submit "Create", class: "btn btn-danger" %>
             </div>

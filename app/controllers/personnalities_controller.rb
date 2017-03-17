@@ -1,4 +1,6 @@
 class PersonnalitiesController < ApplicationController
+
+
   def show
     @personnality = Personnality.find(params[:id])
     @rental = Rental.new
@@ -35,6 +37,7 @@ class PersonnalitiesController < ApplicationController
   private
 
   def personnality_params
-    params.require(:personnality).permit(:name, :age, :sex, :job, :description, :main_emotion)
+    params.require(:personnality).permit(:name, :age, :sex, :job, :description, :main_emotion,
+      :photo, :photo_cache)
   end
 end
