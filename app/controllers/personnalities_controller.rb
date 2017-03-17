@@ -17,7 +17,8 @@ class PersonnalitiesController < ApplicationController
   def create
     @personnality = Personnality.new(personnality_params)
     @personnality.user = current_user
-
+    @personnality.sex.downcase!
+    @personnality.main_emotion.downcase!
     @personnality.save!
     redirect_to personnality_path(@personnality)
   end
