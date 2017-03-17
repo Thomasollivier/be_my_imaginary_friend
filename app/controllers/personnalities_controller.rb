@@ -1,5 +1,15 @@
 class PersonnalitiesController < ApplicationController
 
+  def list_owner
+    @current = current_user
+    @perso_array = []
+    Personnality.all.each do |p|
+      if p.user_id == @current.id
+        @perso_array << p
+      end
+    end
+  end
+
 
   def show
     @personnality = Personnality.find(params[:id])
@@ -20,7 +30,7 @@ class PersonnalitiesController < ApplicationController
     @personnality.sex.downcase!
     @personnality.main_emotion.downcase!
     @personnality.save!
-    redirect_to personnality_path(@personnality)
+    redirect_to list_owner_path
   end
 
   def index
