@@ -32,7 +32,8 @@
         <img src="http://placehold.it/50x50" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
           <li><a href="#">Profile</a></li>
-          <li><%= link_to "Dashboard", rentals_path %></li>
+          <li><%= link_to "My rented personnalities", reservations_path %></li>
+          <li><%= link_to "My booking", rentals_path %></li>
           <li><%= link_to "Log Out", destroy_user_session_path, method: :delete%></li>
         </ul>
       </div>
